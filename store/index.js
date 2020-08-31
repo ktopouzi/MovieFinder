@@ -51,6 +51,7 @@ export const actions = {
     vuexContext.commit('setNoResultsLeft', false)
     vuexContext.commit('setSearchTerm', term)
     vuexContext.commit('setCurrentPage', 1)
+    vuexContext.commit('setSearchMovies', [])
     vuexContext.commit('clearExtraDetails')
 
     // search the API with the given term

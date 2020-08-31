@@ -2,10 +2,14 @@
 
 Movie Finder is a search engine (kinda) for movies. It fetched data from [omdbapi](http://omdbapi.com/) and shows the results into a carousel.
 
+[See it in action](https://ktopouzi-moviefinder.netlify.app/)
+
 
 ## Basic Components
 
 The project is structured in a way that utilizes components for future maintenance. Some of the most important components are listed below.
+
+MovieFinder searches any valid `imdbID` given in the URL `/movies/ID` only in dev mode for now.
 
 ### Search
 
@@ -19,8 +23,7 @@ The `MovieDetails` is a component that renders a movie details fetched from the 
 
 ## Store
 
-The Vuex store is an attempt to keep track of current movies and list the results in the result page. MovieFinder searches any valid `imdbID` given in the URL `/movies/ID`.
-
+The Vuex store is an attempt to keep track of current movies and list the results in the result page.
 The store itself consists of 3 main actions and some utilitius mutations and getters.
 
 ### searchMovie
