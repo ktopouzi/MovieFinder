@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Home",
+        "to": "/"
+    },
+    {
+        "name": "Popular",
+        "to": "/"
+    },
+    {
+        "name": "Social",
+        "to": "/"
+    }
+]
