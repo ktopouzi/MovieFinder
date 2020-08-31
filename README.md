@@ -40,5 +40,5 @@ Given a valid imdbID this action searches for the details of the movie. It is us
 
 I created some `jest` test in order to test some basic functionalities of the components and `vuex store`. It is not  a 100% coverage, it just introduces the concept of tests and TDD.
 
-That's all!! 😊
+That's all!!
 
