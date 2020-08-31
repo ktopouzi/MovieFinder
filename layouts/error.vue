@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto flex flex-col justify-center h-full items-center px-4">
-    <h1 class="text-2xl" v-if="error.statusCode === 404">
+    <h1 v-if="error.statusCode === 404" class="text-2xl">
       Whoops. The page was not found!
     </h1>
     <h1 v-else>
@@ -13,8 +13,24 @@
 </template>
 <script>
 export default {
-  props: ['error']
-
+  props: {
+    error: {
+      type: Object,
+      default: null
+    }
+  },
+  head () {
+    return {
+      titleTemplate: 'Error page - %s',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Search and find details for your favourite movies, actors, producers.'
+        }
+      ]
+    }
+  }
 }
 </script>
 

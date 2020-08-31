@@ -1,8 +1,7 @@
-require('dotenv').config()
 
 export default {
-  privateRuntimeConfig: {
-    apiSecret: process.env.APIKEY
+  env: {
+    apiKey: process.env.API_KEY
   },
   /*
   ** Nuxt rendering mode
@@ -64,8 +63,7 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/axios'
   ],
   /*
   ** Axios module configuration

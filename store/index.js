@@ -54,7 +54,7 @@ export const actions = {
     vuexContext.commit('clearExtraDetails')
 
     // search the API with the given term
-    const movies = await axios.get(`http://omdbapi.com/?s=${term}&apikey=${process.env.APIKEY}`)
+    const movies = await axios.get(`https://omdbapi.com/?s=${term}&apikey=${process.env.apiKey}`)
       .then((response) => {
         if (response.data.Error) { return 'error' }
         // keep track of the total results for "pagination"
@@ -79,7 +79,7 @@ export const actions = {
       // increase the current page
       vuexContext.commit('setCurrentPage', ++results)
       // fetch the next one from the API
-      const nextPage = await axios.get(`http://omdbapi.com/?s=${term}&apikey=${process.env.APIKEY}&page=${vuexContext.state.currentPage}`)
+      const nextPage = await axios.get(`https://omdbapi.com/?s=${term}&apikey=${process.env.apiKey}&page=${vuexContext.state.currentPage}`)
         .then((response) => {
           if (response.data.Error) {
             return 'error'
@@ -96,7 +96,7 @@ export const actions = {
     // add the results to extra details
     if (Array.isArray(ids)) {
       ids.map(async (id) => {
-        const extraDetails = await axios.get(`http://omdbapi.com/?i=${id}&apikey=${process.env.APIKEY}`)
+        const extraDetails = await axios.get(`https://omdbapi.com/?i=${id}&apikey=${process.env.apiKey}`)
           .then((response) => {
             if (response.data.Error) {
               return 'error'
@@ -106,7 +106,7 @@ export const actions = {
         vuexContext.commit('addToExtra', extraDetails)
       })
     } else {
-      const extraDetails = await axios.get(`http://omdbapi.com/?i=${ids}&apikey=${process.env.APIKEY}`)
+      const extraDetails = await axios.get(`https://omdbapi.com/?i=${ids}&apikey=${process.env.apiKey}`)
         .then((response) => {
           if (response.data.Error) {
             return 'error'

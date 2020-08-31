@@ -1,10 +1,10 @@
 <template>
   <div class="movie-details flex flex-wrap p-2 container mx-auto">
-    <div class="movie-details__section-1 w-full sm:w-1/2 mb-4 flex justify-center">
-      <img class="w-full shadow-xl rounded" :src="movie.Poster == 'N/A' ? '/img/image-not-found.png' : movie.Poster" :alt="`${movie.Title} poster`">
+    <div class="movie-details__section-1 w-full md:w-1/2 mb-4 flex justify-center">
+      <img class="w-full lg:max-w-md shadow-xl rounded" :src="movie.Poster == 'N/A' ? '/img/image-not-found.png' : movie.Poster" :alt="`${movie.Title} poster`">
     </div>
     <div
-      class="movie-details__section w-full sm:w-1/2 mb-4 flex flex-col justify-start items-start px-4"
+      class="movie-details__section w-full md:w-1/2 mb-4 flex flex-col justify-start items-start px-4"
     >
       <h1 class="movie-details__title text-2xl font-bold text-left">
         {{ movie.Title }} - {{ movie.Year }}
