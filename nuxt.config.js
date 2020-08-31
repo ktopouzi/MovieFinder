@@ -1,6 +1,9 @@
 require('dotenv').config()
 
 export default {
+  privateRuntimeConfig: {
+    apiSecret: process.env.APIKEY
+  },
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
