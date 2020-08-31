@@ -1,12 +1,47 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="flex flex-col h-screen">
+    <Header :routes="myRoutes" />
+    <main class="flex-1">
+      <Nuxt />
+    </main>
+    <Footer />
   </div>
 </template>
 
+<script>
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+import links from '@/assets/data/menu.json'
+export default {
+  name: 'App',
+  components: {
+    Header,
+    Footer
+  },
+  data () {
+    return {
+      myRoutes: links
+    }
+  },
+  head () {
+    return {
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Search and find details for your favourite movies, actors, producers.'
+        }
+      ]
+    }
+  }
+}
+</script>
+
 <style>
+
 html {
   font-family:
+    Poppins,
     'Source Sans Pro',
     -apple-system,
     BlinkMacSystemFont,
@@ -22,6 +57,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  color: #383838;
 }
 
 *,
@@ -31,32 +67,14 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.page-enter-active,
+.page-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 350ms;
 }
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }
 </style>
