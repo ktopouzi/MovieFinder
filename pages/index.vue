@@ -1,78 +1,33 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        moviefinder
+  <div class="homepage h-full">
+    <div class="flex flex-col justify-center items-center px-4 h-full bg-black bg-opacity-25">
+      <h1 class="text-5xl md:text-6xl up font-extrabold text-white leading-10 xs:leading-9 md:leading-normal text-center">
+        Find your favourite movie!
       </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+      <div class="text text-white text-xl text-center mb-6">
+        <p class="tracking-tight">
+          Just type the <span class="font-bold underline">title</span> below!
+        </p>
       </div>
+      <Search />
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Search from '@/components/Homepage/Search'
+export default {
+  components: {
+    Search
+  }
+}
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.homepage {
+    background-image: url(/img/background.jpg);
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 </style>
