@@ -5,7 +5,17 @@
 ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 */
 module.exports = {
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        dark_blue: '#071927',
+        contrast_blue: '#113653'
+      },
+      screens: {
+        xs: '425px'
+      }
+    }
+  },
   variants: {},
   plugins: [],
   purge: {
